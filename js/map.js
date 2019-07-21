@@ -11,53 +11,29 @@ var map = new mapboxgl.Map({
 // When the page loads, define this funtionality
 map.on('load', function() {
 
+    var toggleableLayerIds = {
+        'franco': 'Francophone service provider',
+        'youth': 'Services for youth',
+        'women': 'Services for women',
+        'volunteer': 'Find or become a mentor to a newcomer',
+        'seniors': 'Services for seniors',
+        'other': 'Other services',
+        'lgbtq2': 'Services for LGBTQ2',
+        'lang-training': 'Language training (general)',
+        'lang-asses': 'Language assessment',
+        'job-lang-training': 'Job-specific language training',
+        'help-gar': 'Services for refugees',
+        'service-general': 'Help with daily life',
+        'job-search': 'Help finding a job',
+    }
 
-    map.addSource('museums', {
-        type: 'vector',
-        url: 'mapbox://mapbox.2opop9hr'
-    });
-
-    map.addLayer({
-        'id': 'museums',
-        'type': 'circle',
-        'source': 'museums',
-        'layout': {
-            'visibility': 'visible'
-        },
-        'paint': {
-            'circle-radius': 8,
-            'circle-color': 'rgba(55,148,179,1)'
-        },
-        'source-layer': 'museum-cusco'
-    });
-
-    map.addSource('contours', {
-        type: 'vector',
-        url: 'mapbox://mapbox.mapbox-terrain-v2'
-    });
-
-    map.addLayer({
-        'id': 'contours',
-        'type': 'line',
-        'source': 'contours',
-        'source-layer': 'contour',
-        'layout': {
-            'visibility': 'visible',
-            'line-join': 'round',
-            'line-cap': 'round'
-        },
-        'paint': {
-            'line-color': '#877b59',
-            'line-width': 1
-        }
-    });
-
-    var toggleableLayerIds = ['franco', 'service-general'];
+    var layerIds = Object.keys(toggleableLayerIds)
 
     // Add functionality to pop up the contact info
     map.on('click', function(e) {
+
         var features = map.queryRenderedFeatures(e.point, {
-            layers: toggleableLayerIds // Add each layer here
+            layers: layerIds
         });
 
         if (!features.length) {
@@ -66,38 +42,44 @@ map.on('load', function() {
 
         var feature = features[0];
 
+        var url = feature.properties['x Website en']
+
         // prepend http:// if it doesn't already start with http
-        var url = feature.properties.x_Website_en;
-        if (url.substr(0, 4) !== 'http') {
-            url = 'http://' + url;
+        if (typeof url !== 'undefined') {
+
+            if (url.substr(0, 4) !== 'http') {
+                url = 'http://' + url;
+            }
         }
 
         var popup = new mapboxgl.Popup({ offset: [0, -15] })
             .setLngLat(feature.geometry.coordinates)
-            .setHTML('<p>' + '<b>' + feature.properties.x_Type_en + '</b>' + '</p>' +
-                feature.properties.x_Address_en + '</br>' +
-                feature.properties.x_City_en + ', ' +
-                feature.properties.x_Province_en + ' ' +
-                feature.properties.x_Postal_en + '</br>' +
-                feature.properties.x_Telephone_en + '</br>' +
+            .setHTML('<p>' + '<b>' + feature.properties["x Type en"] + '</b>' + '</p>' +
+                feature.properties["x Address en"] + '</br>' +
+                feature.properties["x City en"] + ', ' +
+                feature.properties["x Province en"] + ' ' +
+                feature.properties["x Postal en"] + '</br>' +
+                feature.properties["x Telephone en"] + '</br>' +
                 '<a target=_blank href="' + url + '">' + url + '</a></br>'
             )
             .setLngLat(feature.geometry.coordinates)
             .addTo(map);
     });
 
-    for (var i = 0; i < toggleableLayerIds.length; i++) {
-        var id = toggleableLayerIds[i];
+    idx = 0;
+    for (var id in toggleableLayerIds) {
+        var text = toggleableLayerIds[id];
 
         var link = document.createElement('a');
         link.href = '#';
         link.className = 'active';
-        link.textContent = id;
+        link.id = id
+        link.textContent = text;
 
         map.setLayoutProperty(id, 'visibility', 'visible');
 
         link.onclick = function(e) {
-            var clickedLayer = this.textContent;
+            var clickedLayer = this.id;
             e.preventDefault();
             e.stopPropagation();
 
@@ -114,6 +96,6 @@ map.on('load', function() {
 
         var layers = document.getElementById('menu');
         layers.appendChild(link);
-
+        idx++;
     }
 });
