@@ -96,4 +96,6 @@ map.on('load', function() {
         var layers = document.getElementById('menu');
         layers.appendChild(link);
     }
+
+    map.addControl(new mapboxgl.ScaleControl({position: 'bottom-left'}));
 });
