@@ -24,7 +24,7 @@ body {
 }
 
 #menu {
-    background: #fff;
+    background: #aaa;
     position: absolute;
     z-index: 1;
     top: 10px;
@@ -53,15 +53,15 @@ body {
 }
 
 #menu a:hover {
-    background-color: #f8f8f8;
+    background-color: #bbb;
     color: #404040;
 }
 
 #menu a.active {
-    background-color: #3887be;
-    color: #ffffff;
+    background-color: white;
+    color: #333;
 }
 
 #menu a.active:hover {
-    background: #3074a4;
+    background-color: #ddd;
 }
