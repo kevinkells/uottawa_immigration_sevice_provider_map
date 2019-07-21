@@ -73,7 +73,7 @@ map.on('load', function() {
         link.href = '#';
         link.className = 'active';
         link.id = id
-        link.textContent = text;
+        link.innerHTML = "<span class='dot'></span>" + text;
 
         map.setLayoutProperty(id, 'visibility', 'visible');
 
