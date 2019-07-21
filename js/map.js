@@ -66,7 +66,6 @@ map.on('load', function() {
             .addTo(map);
     });
 
-    idx = 0;
     for (var id in toggleableLayerIds) {
         var text = toggleableLayerIds[id];
 
@@ -96,6 +95,5 @@ map.on('load', function() {
 
         var layers = document.getElementById('menu');
         layers.appendChild(link);
-        idx++;
     }
 });
