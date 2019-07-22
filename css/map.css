@@ -14,7 +14,7 @@ body {
     background: #fff;
     position: absolute;
     z-index: 1;
-    bottom: 10px;
+    bottom: 15px;
     right: 10px;
     border-radius: 3px;
     width: 280px;
@@ -22,6 +22,11 @@ body {
     font-family: 'Open Sans', sans-serif;
     font-size: 9px;
     opacity: 0.9;
+    padding: 0 10px;
+}
+
+#main h1 {
+	font-size: 12px;
 }
 
 .dot {
