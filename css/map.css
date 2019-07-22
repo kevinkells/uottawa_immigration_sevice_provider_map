@@ -20,6 +20,7 @@ body {
     width: 280px;
     border: 1px solid rgba(0, 0, 0, 0.4);
     font-family: 'Open Sans', sans-serif;
+    font-size: 9px;
     opacity: 0.9;
 }
 
