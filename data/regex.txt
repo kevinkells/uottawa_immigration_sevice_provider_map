@@ -1,0 +1,7 @@
+Notes
+
+Sublime Text regex replacement:
+
+(?s)^id:([0-9]*).*?<td><div[^>]*>Service\(s\).*?<ul>(.*?)</ul></td>.*?</html>
+
+<ul id='\1'>\n\2\n</ul>
