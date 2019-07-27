@@ -12,19 +12,19 @@ var map = new mapboxgl.Map({
 map.on('load', function() {
 
     var toggleableLayerIds = {
-        'franco': 'Francophone service provider',
-        'youth': 'Services for youth',
-        'women': 'Services for women',
         'volunteer': 'Find or become a mentor to a newcomer',
-        'seniors': 'Services for seniors',
         'other': 'Other services',
-        'lgbtq2': 'Services for LGBTQ2',
         'lang-training': 'Language training (general)',
-        'lang-asses': 'Language assessment',
-        'job-lang-training': 'Job-specific language training',
+        'franco': 'Francophone service provider',
+        'job-search': 'Help finding a job',
         'help-gar': 'Services for refugees',
         'service-general': 'Help with daily life',
-        'job-search': 'Help finding a job',
+        'lang-asses': 'Language assessment',
+        'job-lang-training': 'Job-specific language training',
+        'women': 'Services for women',
+        'youth': 'Services for youth',
+        'seniors': 'Services for seniors',
+        'lgbtq2': 'Services for LGBTQ2',
     }
 
     var layerIds = Object.keys(toggleableLayerIds)
