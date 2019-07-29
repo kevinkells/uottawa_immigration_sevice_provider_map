@@ -73,8 +73,8 @@ map.on('load', function() {
         link.href = '#';
         link.className = 'active';
         link.id = id
-        link.innerHTML = "<span class='dot'></span>" + text;
-
+        link.innerHTML = "<span class='checkmark'>&#10004;</span>" + "<span class='dot'></span>" + text;
+        
         map.setLayoutProperty(id, 'visibility', 'visible');
 
         link.onclick = function(e) {
