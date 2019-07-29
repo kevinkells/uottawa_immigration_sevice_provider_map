@@ -8,6 +8,13 @@ var map = new mapboxgl.Map({
     zoom: 4.11
 });
 
+var geocoder = new MapboxGeocoder({
+  accessToken: mapboxgl.accessToken,
+  mapboxgl: mapboxgl
+});
+
+document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
+
 // When the page loads, define this funtionality
 map.on('load', function() {
 
