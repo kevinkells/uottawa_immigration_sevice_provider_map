@@ -8,6 +8,12 @@ var map = new mapboxgl.Map({
     zoom: 4.11
 });
 
+var directions = new MapboxDirections({
+  accessToken: mapboxgl.accessToken,
+  unit: 'metric',
+});
+map.addControl(directions, 'bottom-left');
+
 // When the page loads, define this funtionality
 map.on('load', function() {
 

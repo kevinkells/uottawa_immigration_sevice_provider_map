@@ -43,6 +43,18 @@ body {
 	font-size: 12px;
 }
 
+.geocoder {
+  position: absolute;
+  z-index: 1;
+  width: 40%;
+  left: 10px;
+  top: 110px;
+}
+
+.mapboxgl-ctrl-geocoder {
+  min-width: 100%;
+}
+
 .dot {
 	height: 10px;
 	width: 10px;
