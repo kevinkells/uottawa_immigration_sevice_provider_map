@@ -49,8 +49,16 @@ body {
 	display: inline-block;
 	background-color: red;
 	border-radius: 50%;
-	margin-left: -5px;
+	margin-left: 5px;
 	margin-right: 5px;
+}
+
+.checkmark {
+  visibility: hidden;
+}
+
+.active .checkmark {
+  visibility: visible;
 }
 
 #menu #youth				.dot { background-color:#ffcccc; }
@@ -97,15 +105,15 @@ body {
 }
 
 #menu a:hover {
-    background-color: #bbb;
-    color: #404040;
+  background-color: #addcee;
+  color: #404040;
 }
 
 #menu a.active {
-    background-color: white;
-    color: #333;
+  background-color: rgb(78, 195, 231);
+  color: #333;
 }
 
 #menu a.active:hover {
-    background-color: #ddd;
+  background-color: rgb(78, 195, 231);
 }
