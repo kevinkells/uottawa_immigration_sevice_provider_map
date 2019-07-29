@@ -8,12 +8,11 @@ var map = new mapboxgl.Map({
     zoom: 4.11
 });
 
-var geocoder = new MapboxGeocoder({
+var directions = new MapboxDirections({
   accessToken: mapboxgl.accessToken,
-  mapboxgl: mapboxgl
+  unit: 'metric',
 });
-
-document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
+map.addControl(directions, 'bottom-left');
 
 // When the page loads, define this funtionality
 map.on('load', function() {
