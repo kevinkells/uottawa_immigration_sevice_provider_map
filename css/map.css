@@ -43,6 +43,72 @@ body {
 	font-size: 12px;
 }
 
+#gradient {
+  border: 0.6px solid rgb(20, 2, 2);
+  font-size: 9px;
+  padding: 2px;
+  width: 280px;
+  text-align: center;
+  background: rgb(241, 236, 236);
+  position: absolute;
+  z-index: 1;
+  bottom: 10px;
+  right: 600px;
+  border-radius: 0.2px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.swatches {
+  background: linear-gradient(to right, rgb(214, 231, 138), #cea729, #f00);
+  height: 16px;
+  margin: 0 10px;
+  content: 'legend;'
+}
+
+.labels {
+  position: relative;
+}
+
+.label {
+  max-width: 32%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-align: center;
+  text-overflow: ellipsis;
+}
+
+.label.min,
+.label.max {
+  position: absolute;
+  top: 0;
+  min-width: 20px;
+}
+
+.label.min {
+  left: 0;
+}
+
+.label.median {
+  margin: 0 auto;
+}
+
+.label.max {
+  right: 0;
+}
+
+.label::after {
+  display: block;
+}
+
+.label.min::after {
+  margin-left: 12px;
+}
+
+.label.max::after {
+  text-align: right;
+}
+
+
 .geocoder {
   position: absolute;
   z-index: 1;
