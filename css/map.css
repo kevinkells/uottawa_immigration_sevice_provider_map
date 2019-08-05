@@ -44,26 +44,46 @@ body {
 }
 
 #gradient {
+  display: block;
   border: 0.6px solid rgb(20, 2, 2);
-  font-size: 9px;
   padding: 2px;
-  width: 280px;
-  text-align: center;
   background: rgb(241, 236, 236);
-  position: absolute;
-  z-index: 1;
-  bottom: 10px;
-  right: 600px;
   border-radius: 0.2px;
+  text-align: center;
   font-family: 'Open Sans', sans-serif;
+  font-size: 9px;
+  z-index: 1;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  width: 440px;
+  margin-left: -220px;
 }
 
+#gradient span { 
+  width: 40px; 
+  display: inline-block; 
+  margin: 0;
+  padding: 0;
+}
+
+#gradient0     { background-color: #ffffff; }
+#gradient10    { background-color: #fff5eb; }
+#gradient50    { background-color: #fee6ce; }
+#gradient100   { background-color: #fdd0a2; }
+#gradient500   { background-color: #fdae6b; }
+#gradient1000  { background-color: #fd8d3c; }
+#gradient5000  { background-color: #f16913; color: white;}
+#gradient10000 { background-color: #d94801; color: white;}
+#gradient50000 { background-color: #8c2d04; color: white;}
+
+/*
 .swatches {
   background: linear-gradient(to right, rgb(214, 231, 138), #cea729, #f00);
   height: 16px;
   margin: 0 10px;
   content: 'legend;'
-}
+}*/
 
 .labels {
   position: relative;
