@@ -174,7 +174,7 @@ body {
 #menu #service-general		.dot { background-color:#ff33ff; }
 
 #menu {
-    background: #aaa;
+    background-color: #fff;
     position: absolute;
     z-index: 1;
     top: 10px;
