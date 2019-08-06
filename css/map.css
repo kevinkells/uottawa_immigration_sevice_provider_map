@@ -67,15 +67,15 @@ body {
   padding: 0;
 }
 
-#gradient0     { background-color: #ffffff; }
-#gradient10    { background-color: #fff5eb; }
-#gradient50    { background-color: #fee6ce; }
-#gradient100   { background-color: #fdd0a2; }
-#gradient500   { background-color: #fdae6b; }
-#gradient1000  { background-color: #fd8d3c; }
-#gradient5000  { background-color: #f16913; color: white;}
-#gradient10000 { background-color: #d94801; color: white;}
-#gradient50000 { background-color: #8c2d04; color: white;}
+#gradient0     { background-color: rgba(255,255,255,0.5); }
+#gradient10    { background-color: rgba(255,245,235,0.5); }
+#gradient50    { background-color: rgba(254,230,206,0.5); }
+#gradient100   { background-color: rgba(253,208,162,0.5); }
+#gradient500   { background-color: rgba(253,174,107,0.5); }
+#gradient1000  { background-color: rgba(253,141,60,0.5); }
+#gradient5000  { background-color: rgba(241,105,19,0.5); }
+#gradient10000 { background-color: rgba(217,72,1,0.5); }
+#gradient50000 { background-color: rgba(140, 45, 04,0.5); }
 
 /*
 .swatches {
