@@ -10,8 +10,11 @@ var map = new mapboxgl.Map({
 
 var directions = new MapboxDirections({
   accessToken: mapboxgl.accessToken,
+  interactive: false,
+  flyTo: false, 
   unit: 'metric',
 });
+
 map.addControl(directions, 'bottom-left');
 
 // When the page loads, define this funtionality
@@ -43,10 +46,14 @@ map.on('load', function() {
         });
 
         if (!features.length) {
+            directions.setDestination([e.lngLat.lng, e.lngLat.lat]);
             return;
         }
 
         var feature = features[0];
+
+        directions.removeRoutes();
+        directions.setOrigin(feature.geometry.coordinates);
 
         var url = feature.properties['x Website en']
 
@@ -84,6 +91,7 @@ map.on('load', function() {
         map.setLayoutProperty(id, 'visibility', 'visible');
 
         link.onclick = function(e) {
+
             var clickedLayer = this.id;
             e.preventDefault();
             e.stopPropagation();
